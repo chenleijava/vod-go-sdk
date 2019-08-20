@@ -117,7 +117,7 @@ func (p *VodUploadClient) uploadCos(client *cos.Client, localPath string, cosPat
 			OptIni:   nil,
 			PartSize: 1,
 		}
-		_, _, err = client.Object.MultiUpload(context.Background(), cosPath, file, multiOpt)
+		_, _, err = client.Object.MultiUpload(context.Background(), cosPath, localPath, multiOpt)
 		if err != nil {
 			return err
 		}
